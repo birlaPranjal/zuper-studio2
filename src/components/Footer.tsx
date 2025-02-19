@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   FaFacebookF,
   FaInstagram,
-  FaWhatsapp,
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
@@ -85,10 +84,10 @@ export function Footer() {
             <li>Indore, Madhya Pradesh, India</li>
             <li>
               <Link
-                href="mailto:contact@internx.com"
+                href="mailto:info@zuperstudio.com"
                 className="hover:text-secondary transition-all"
               >
-                zuperstuido.com
+                info@zuperstudio.com
               </Link>
             </li>
             <li>
