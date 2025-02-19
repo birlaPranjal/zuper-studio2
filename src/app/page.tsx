@@ -1,6 +1,6 @@
 import React from 'react'
+import WhoWeAre from '@/components/WhoWeAre'
 import Header from '@/components/Header'
-// import WhoWeAre from '@/components/WhoWeAre'
 
 export default function page() {
   return (
@@ -8,9 +8,9 @@ export default function page() {
       <section className="min-h-scree n flex items-center justify-center">
         <Header />
       </section>
-      {/* <section className="min-h-scree n flex items-center justify-center">
+      <section className="min-h-scree n flex items-center justify-center">
         <WhoWeAre />
-      </section> */}
+      </section>
     </main>
   )
 }
