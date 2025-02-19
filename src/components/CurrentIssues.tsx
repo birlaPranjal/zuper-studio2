@@ -107,6 +107,8 @@ function BounceCards({
             className="w-full h-full object-cover"
             src={src}
             alt={`card-${idx}`}
+            width={200}
+            height={200}
           />
         </motion.div>
       ))}

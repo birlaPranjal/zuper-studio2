@@ -29,31 +29,23 @@ export default function WhoWeAre() {
   ]
 
   return (
-    <div className="min-h-screen pt-24 bg-gradient-to-b from-black to-gray-900 max-w-[99vw] mx-auto flex flex-col justify-center items-center" id="about">
-      {/* Animated Gradient Circles */}
+    <div className="min-h-screen w-[99vw] overflow-hidden pt-24 bg-gradient-to-b from-black to-gray-900 flex flex-col justify-center items-center relative" id="about">
+      {/* Animated Gradient Circles - Contained within parent bounds */}
       <motion.div
-        className="absolute left-0 bottom-0 w-[600px] border h-[600px] opacity-30 mix-blend-overlay"
-        initial={{ scale: 0, opacity: 0 }}
+        className="absolute left-1/2 -translate-x-1/2 bottom-0 w-full max-w-[600px] h-[600px] opacity-30 mix-blend-overlay pointer-events-none"
+        initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 0.3 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         style={{
           background: 'radial-gradient(circle at center, rgba(5, 46, 22, 0.3) 0%, rgba(5, 46, 22, 0) 70%)'
         }}
       />
       
       <motion.div
-        className="absolute right-0 top-0 w-[500px] h-[500px] opacity-25 mix-blend-overlay"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ 
-          scale: 1,
-          opacity: 0.25,
-          rotate: [0, 360]
-        }}
-        transition={{ 
-          duration: 4,
-          ease: "linear",
-          repeat: Infinity
-        }}
+        className="absolute right-1/2 translate-x-1/2 top-0 w-full max-w-[500px] h-[500px] opacity-25 mix-blend-overlay pointer-events-none"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 0.25 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         style={{
           background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(5, 46, 22, 0) 70%)'
         }}
@@ -61,23 +53,23 @@ export default function WhoWeAre() {
 
       <motion.section
         ref={ref}
-        className="w-screen sm:w-[70vw] text-center px-4 relative z-10"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        className="w-full max-w-[1200px] text-center px-4 relative z-10"
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
         transition={{ duration: 0.5 }}
       >
         <motion.h2
           className="text-4xl font-bold mb-6 font-poppins"
-          initial={{ y: -30 }}
-          animate={inView ? { y: 0 } : {}}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           WHO WE ARE
         </motion.h2>
         <motion.p
-          className="text-sm sm:text-lg leading-relaxed mb-12 sm:w-[60vw] mx-auto"
-          initial={{ y: 20 }}
-          animate={inView ? { y: 0 } : {}}
+          className="text-sm sm:text-lg leading-relaxed mb-12 mx-auto max-w-[800px]"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           ZuperStudio is a one-stop solution for all branding and online presence needs, built by entrepreneurs, for
@@ -85,6 +77,7 @@ export default function WhoWeAre() {
           deadlines, broken promises, and lack of engagement—by delivering high-quality content, strategic PR, and
           guaranteed on-time service.
         </motion.p>
+        
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 flex-wrap">
           {features.map((feature, index) => (
             <Card key={index} className="w-full sm:w-[300px] h-[280px] sm:h-[350px] rounded-xl sm:rounded-2xl">
@@ -100,17 +93,18 @@ export default function WhoWeAre() {
             </Card>
           ))}
         </div>
+
         <motion.p
           className="text-xl md:text-4xl mt-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           We are a team of entrepreneurs who understand your needs because we&apos;ve been there.
         </motion.p>
-        <div className="h-16 sm:h-0"></div>
       </motion.section>
-      <div style={{ height: '400px', width: '100vw', position: 'relative' }}>
+      
+      <div className="w-full h-[400px] relative overflow-hidden">
         <CircularGallery />
       </div>
     </div>

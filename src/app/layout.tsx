@@ -26,10 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans text-white min-h-screen w-[99vw] relative overflow-x-hidden`}
+        className={`${inter.variable} ${poppins.variable} bg-black font-sans text-white min-h-screen w-full relative overflow-x-hidden`}
       >
         <NavBar />
-        <main className="max-w-[99vw] mx-auto overflow-hidden">{children}</main>
+        <main className="w-full overflow-hidden">{children}</main>
         <Footer />
         <WhatsAppButton phoneNumber="+919977990520" />
       </body>
