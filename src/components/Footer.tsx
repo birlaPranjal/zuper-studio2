@@ -57,11 +57,10 @@ export function Footer() {
           {/* Social Icons - Centered grid */}
           <ul className="grid grid-cols-5 gap-4 mt-6 place-items-center">
             {[
-              { icon: FaFacebookF, url: "https://www.facebook.com/profile.php?id=61565474785625" },
-              { icon: FaInstagram, url: "https://instagram.com/indoriix" },
-              { icon: FaWhatsapp, url: "https://chat.whatsapp.com/HPdMkhFz5Vq7fAYjQ2OCHr" },
-              { icon: FaTwitter, url: "https://x.com/indoriix" },
-              { icon: FaLinkedinIn, url: "https://linkedin.com/company/indorix" },
+              { icon: FaFacebookF, url: "https://www.facebook.com" },
+              { icon: FaInstagram, url: "https://instagram.com/zuperstudioofficial" },
+              { icon: FaTwitter, url: "https://x.com/zuperstudioofficial" },
+              { icon: FaLinkedinIn, url: "https://www.linkedin.com/company/zuperstudioo" },
             ].map((social, index) => (
               <li key={index}>
                 <a

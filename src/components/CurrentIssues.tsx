@@ -3,118 +3,51 @@ import { useInView } from 'react-intersection-observer'
 import { 
   FaExclamationTriangle, 
   FaUnlink, 
-  FaDollarSign, 
+  FaRupeeSign, 
   FaClock, 
   FaTimesCircle, 
   FaLayerGroup 
 } from 'react-icons/fa'
-import Image from "next/image";
+import Image from "next/image"
 
-const images = [
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format",
-  "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format",
-  "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format",
-  "https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format",
-  "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format"
-];
-const transformStyles = [
-  "rotate(5deg) translate(-150px)",
-  "rotate(0deg) translate(-70px)",
-  "rotate(-5deg)",
-  "rotate(5deg) translate(70px)",
-  "rotate(-5deg) translate(150px)"
-];
 const issues = [
   {
     icon: FaExclamationTriangle,
     title: "LACK OF ENGAGEMENT",
     description: "Branding agencies fail to create content that connects with audiences.",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=500&auto=format"
   },
   {
     icon: FaUnlink,
     title: "WEAK PR STRATEGIES",
     description: "Poor relationship-building between brands and audiences.",
+    image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format"
   },
   {
-    icon: FaDollarSign,
+    icon: FaRupeeSign,
     title: "OVER-RELIANCE ON ADS",
     description: "Businesses spend too much on paid ads instead of organic brand growth.",
+    image: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format"
   },
   {
     icon: FaClock,
     title: "COMMITMENT ISSUES",
     description: "Agencies often miss deadlines and don't do anything about it.",
+    image: "https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format"
   },
   {
     icon: FaTimesCircle,
     title: "DELIVERY ISSUES",
     description: "Agencies fail to deliver as promised and they often deliver much less.",
+    image: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format"
   },
   {
     icon: FaLayerGroup,
     title: "SCATTERED SOLUTIONS",
     description: "Businesses struggle with multiple vendors for branding, PR, content, and web management.",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=500&auto=format"
   },
 ] as const;
-
-
-
-interface BounceCardsProps {
-  className?: string;
-  images: string[];
-  containerWidth?: number;
-  containerHeight?: number;
-  animationDelay?: number;
-  animationStagger?: number;
-  transformStyles: string[];
-}
-
-function BounceCards({
-  className = "",
-  images,
-  containerWidth = 400,
-  containerHeight = 400,
-  animationDelay = 0.5,
-  animationStagger = 0.06,
-  transformStyles,
-}: BounceCardsProps) {
-  return (
-    <div
-      className={`relative flex items-center justify-center ${className}`}
-      style={{
-        width: containerWidth,
-        height: containerHeight,
-      }}
-    >
-      {images.map((src, idx) => (
-        <motion.div
-          key={idx}
-          className="card absolute w-[200px] aspect-square border-8 border-white rounded-[30px] overflow-hidden"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 20,
-            delay: animationDelay + (idx * animationStagger)
-          }}
-          style={{
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-            transform: transformStyles[idx] !== undefined ? transformStyles[idx] : "none",
-          }}
-        >
-          <Image
-            className="w-full h-full object-cover"
-            src={src}
-            alt={`card-${idx}`}
-            width={200}
-            height={200}
-          />
-        </motion.div>
-      ))}
-    </div>
-  );
-}
 
 export default function CurrentIssues() {
   const { ref, inView } = useInView({
@@ -180,6 +113,20 @@ export default function CurrentIssues() {
             whileTap={{ scale: 0.98 }}
           >
             <motion.div
+              className="absolute left-full ml-4 top-1/2 -translate-y-1/2 w-0 h-0 group-hover:w-48 group-hover:h-48 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 shadow-xl rounded-lg overflow-hidden"
+              initial={{ scale: 0 }}
+              animate={inView ? { scale: 1 } : {}}
+            >
+              <Image
+                src={issue.image}
+                alt={issue.title}
+                layout="fill"
+                objectFit="cover"
+                className="transform group-hover:scale-105 transition-transform duration-300"
+              />
+            </motion.div>
+
+            <motion.div
               className="p-2 rounded-lg mr-4 mt-1 flex-shrink-0 bg-[#01a2fd]/10"
               initial={{ scale: 0.8, rotate: -15 }}
               animate={inView ? { scale: 1, rotate: 0 } : {}}
@@ -203,17 +150,6 @@ export default function CurrentIssues() {
             </motion.div>
           </motion.div>
         ))}
-      </div>
-      <div className="">
-      <BounceCards
-        className="custom-class hidden md:block ml-96 mt-16 -mb-32"
-        images={images}
-        containerWidth={950}
-        containerHeight={500}
-        animationDelay={1.5}
-        animationStagger={0.2}
-        transformStyles={transformStyles}
-      />
       </div>
     </motion.section>
   )

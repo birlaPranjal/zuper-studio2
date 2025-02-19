@@ -70,7 +70,7 @@ const TextRevealComponent = () => {
           style={{ width: layerWidth, borderRadius: '20px', overflow: 'hidden' }}
         >
           <motion.img
-            src="/file2.svg" // Replace with your image path
+            src="https://res.cloudinary.com/travelee/image/upload/v1739995874/blue_gradient_travel_Presentation_169_1_blvpih.svg" // Replace with your image path
             alt="Background Image"
             className="absolute w-full h-full object-cover"
             style={{ scale: imageScale, borderRadius: '20px' }}

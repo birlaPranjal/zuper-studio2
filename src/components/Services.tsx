@@ -137,7 +137,7 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 px-4 lg:px-8 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+    <section className=" px-4 lg:px-8 relative overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0 opacity-20"
@@ -152,7 +152,7 @@ const ServicesSection = () => {
       />
       
       <motion.h2 
-        className="text-4xl md:text-6xl font-['Ailerons'] text-center mb-16 lg:mb-24 tracking-tight"
+        className="text-4xl md:text-6xl font-['Ailerons'] text-center mb-6 md:mb-16 tracking-tight"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}

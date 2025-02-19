@@ -95,7 +95,7 @@ export default function WhoWeAre() {
         </div>
 
         <motion.p
-          className="text-xl md:text-4xl mt-8"
+          className="text-xl md:text-4xl mt-8 max-w-5xl mx-auto"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
