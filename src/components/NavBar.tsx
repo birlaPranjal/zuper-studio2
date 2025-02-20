@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import logo from "../../public/logo.png";
 import { navOptions } from "../../public/data/navOptions";
 
 const Header: React.FC = () => {
@@ -67,7 +66,7 @@ const Header: React.FC = () => {
           >
             <Link href="/">
               <Image
-                src={logo}
+                src="https://res.cloudinary.com/travelee/image/upload/v1740029413/logo_mle0rh.png"
                 alt="IndoriX Logo"
                 className="w-20 h-20 -my-5"
                 priority
