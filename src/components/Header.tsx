@@ -24,7 +24,7 @@ export default function Header() {
       <div className="relative z-10">
         <motion.div
           className="flex items-center justify-center -mt-10"
-          initial={{ scale: 0.5, rotate: -180 }}
+          initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
@@ -32,8 +32,8 @@ export default function Header() {
         </motion.div>
         <motion.div
           className="text-md md:text-2xl border-2 border-white rounded-xl py-2 flex items-center md:px-5 justify-center text-white mx-5 -mt-16"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           Nation Building Through Entrepreneurship
@@ -44,19 +44,21 @@ export default function Header() {
           className="px-6 py-3 bg-[#01a2fd] text-white font-bold rounded-full text-lg hover:bg-[#01a2fd]/60 transition-colors duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, scale: 0 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           100% MoneyBack Guarantee
         </motion.a>
-        <motion.p className="max-w-[600px] mx-auto text-white text-lg md:text-2xl pt-8 font-mono"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}>
-        EVEN IF 99% OF THE WORK IS DONE,<br/> WE REFUND 100% OF THE AMOUNT!
+        <motion.p 
+          className="max-w-[600px] mx-auto text-white text-lg md:text-2xl pt-8 font-mono"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 20, scale: 0 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          EVEN IF 99% OF THE WORK IS DONE,<br/> WE REFUND 100% OF THE AMOUNT!
         </motion.p>
         
         
