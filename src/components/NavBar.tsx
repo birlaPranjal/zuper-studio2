@@ -70,6 +70,8 @@ const Header: React.FC = () => {
                 alt="IndoriX Logo"
                 className="w-20 h-20 -my-5"
                 priority
+                width={80}
+                height={60}
               />
             </Link>
 
