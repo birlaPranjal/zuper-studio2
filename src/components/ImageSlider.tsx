@@ -69,8 +69,8 @@ export default function CustomSwiper() {
                 <Image
                   src={img}
                   alt={`Slide ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
+                  style={{ objectFit: "cover"}}
+                  fill
                   className="rounded-lg"
                 />
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-black/50 to-black/0"></div>
