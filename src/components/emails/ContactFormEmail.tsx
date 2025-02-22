@@ -3,7 +3,6 @@ import {
   Body,
   Container,
   Text,
-  Link,
   Preview,
   Tailwind,
 } from '@react-email/components'

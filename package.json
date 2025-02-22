@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",
+    "@react-email/components": "^0.0.33",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.3",
     "next": "15.1.7",
