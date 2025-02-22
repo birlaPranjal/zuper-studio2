@@ -3,9 +3,18 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { HiMail } from "react-icons/hi"
+import { useToast } from "@/context/ToastContext"
+
+interface FormData {
+  name: string
+  email: string
+  message: string
+}
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
+  const { showToast } = useToast()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
@@ -21,21 +30,32 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (isSubmitting) return
+    
+    setIsSubmitting(true)
+    showToast("Sending your message...", "success")
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
+      
+      const data = await response.json()
+      
       if (response.ok) {
-        alert("Message sent successfully!")
         setFormData({ name: "", email: "", message: "" })
+        showToast("Thank you! Your message has been sent successfully.", "success")
       } else {
-        alert("Failed to send message. Please try again.")
+        showToast(data.error || "Failed to send message. Please try again.", "error")
       }
     } catch (error) {
       console.error("Error:", error)
-      alert("An error occurred. Please try again.")
+      showToast("Something went wrong. Please try again later.", "error")
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -75,7 +95,8 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded bg-white bg-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={isSubmitting}
+            className="w-full p-3 rounded bg-white bg-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
           />
         </div>
         <div>
@@ -89,7 +110,8 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded bg-white bg-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={isSubmitting}
+            className="w-full p-3 rounded bg-white bg-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
           />
         </div>
         <div>
@@ -102,16 +124,18 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full p-3 rounded bg-white bg-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
+            disabled={isSubmitting}
+            className="w-full p-3 rounded bg-white bg-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 h-32 disabled:opacity-50"
           ></textarea>
         </div>
         <motion.button
           type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          disabled={isSubmitting}
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+          whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
         >
-          Send Message
+          {isSubmitting ? "Sending..." : "Send Message"}
         </motion.button>
       </motion.form>
     </motion.section>

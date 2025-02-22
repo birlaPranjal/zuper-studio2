@@ -40,7 +40,7 @@ export default function Testimonials() {
   });
 
   return (
-    <div className="relative min-h-screen pt-24 bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+    <div className="relative min-h-screen max-w-[80vw] pt-24  overflow-hidden">
       {/* Animated Gradient Circles - Updated positioning and size */}
       <motion.div
         className="fixed left-0 bottom-0 w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] opacity-30 mix-blend-overlay pointer-events-none"

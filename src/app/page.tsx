@@ -15,6 +15,9 @@ import ImageSlider from "@/components/ImageSlider";
 import FilmGallery from "@/components/FilmGallery";
 import TeamSlider from "@/components/TeamSlider";
 import WhoWeAre from "@/components/WhoWeAre";
+import ComparisonTable from "@/components/DifferenceTable"
+import BrandingHero from "@/components/BrandingHero"
+
 
 export default function Home() {
   return (
@@ -65,7 +68,13 @@ export default function Home() {
       <section className="min-h-[70vh] w-[99vw] -mb-14 flex items-center justify-center bg-gradient-to-b from-black to-gray-900">
         <MoneyBackGuarantee />
       </section>
-      <section className="py-32 w-[99vw] flex items-center justify-center bg-gradient-to-b from-black to-gray-900"> 
+      <section className="min-h-[70vh] w-[99vw] -mb-14 flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
+        <ComparisonTable/>
+      </section>
+      <section className="min-h-[70vh] w-[99vw] -mb-14 flex items-center justify-center bg-gradient-to-b from-black to-gray-900">
+        <BrandingHero />
+      </section>
+      <section className="py-32 w-[99vw] flex items-center justify-center bg-gradient-to-b from-gray-900 to-black"> 
         <FilmGallery />
       </section>
       <section className="min-h-screen hidden w-[99vw] md:flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
@@ -74,10 +83,10 @@ export default function Home() {
       <section className="w-[99vw] flex items-center justify-center bg-gradient-to-b from-black to-gray-900"> 
         <TeamSlider />
       </section>
-      <section className="min-h-screen flex items-center justify-center w-[99vw] bg-gradient-to-b from-black to-gray-900">
+      <section className="min-h-screen flex items-center justify-center w-[99vw] bg-gradient-to-b from-gray-900 via-black to-gray-900">
         <Testimonials />
       </section>
-      <section className="min-h-screen flex items-center justify-center w-[99vw] bg-gradient-to-b from-black to-gray-900">
+      <section className="min-h-screen flex items-center justify-center w-[99vw] bg-gradient-to-b from-gray-900 via-black to-gray-900">
         <FAQ />
       </section>
       <section className="min-h-screen flex items-center justify-center w-[99vw] bg-gradient-to-b from-gray-900 to-black">

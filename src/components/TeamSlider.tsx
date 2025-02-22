@@ -11,17 +11,17 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: "Zuper Prashant",
-    role: "Film Director",
+    role: "Founder & CEO",
     image: "https://res.cloudinary.com/travelee/image/upload/v1739794557/d441e76a-616a-4030-8bc9-5772963ccc7b.png",
   },
   {
     name: "Zuper Ayushi",
-    role: "Creative Director",
+    role: "Co-Founder",
     image: "https://res.cloudinary.com/travelee/image/upload/v1739796809/beca13ac-5d49-4347-8878-77dc4db60160.png",
   },
   {
     name: "Zuper Prateeksha",
-    role: "Writer & Editor",
+    role: "HR & Operations",
     image: "https://res.cloudinary.com/travelee/image/upload/v1739796429/WhatsApp_Image_2025-02-17_at_17.54.44_ec09452f_xy5u1j.jpg",
   }
 ];
