@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import image2 from "../../public/f1.png"
+import image1 from "../../public/f2.png"
+import image3 from "../../public/f3.jpg"
 
 type TeamMember = {
   name: string;
@@ -12,17 +15,17 @@ const teamMembers: TeamMember[] = [
   {
     name: "Zuper Prashant",
     role: "Founder & CEO",
-    image: "https://res.cloudinary.com/travelee/image/upload/v1739794557/d441e76a-616a-4030-8bc9-5772963ccc7b.png",
+    image: image1.src,
   },
   {
     name: "Zuper Ayushi",
     role: "Co-Founder",
-    image: "https://res.cloudinary.com/travelee/image/upload/v1739796809/beca13ac-5d49-4347-8878-77dc4db60160.png",
+    image: image2.src,
   },
   {
     name: "Zuper Prateeksha",
     role: "HR & Operations",
-    image: "https://res.cloudinary.com/travelee/image/upload/v1739796429/WhatsApp_Image_2025-02-17_at_17.54.44_ec09452f_xy5u1j.jpg",
+    image: image3.src,
   }
 ];
 

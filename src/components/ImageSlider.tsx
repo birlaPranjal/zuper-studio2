@@ -6,23 +6,19 @@ import "swiper/css"
 import "swiper/css/effect-coverflow"
 import "swiper/css/autoplay"
 import Image from "next/image"
+import i from "../../public/i1.jpg"
+import im from "../../public/i2.jpg"
+import ima from "../../public/i3.jpg"
+import imag from "../../public/i4.jpg"
+import image from "../../public/i5.jpg"
+import imagei from "../../public/i6.webp"
+import imageia from "../../public/i7.avif"
+import imageiaa from "../../public/i8.avif"
+import imageiaaa from "../../public/i9.avif"
+
 
 const images = [
-  "https://res.cloudinary.com/travelee/image/upload/v1739795141/studio1_plsx8o.webp",
-  "https://res.cloudinary.com/travelee/image/upload/v1739795724/photo-1553877522-43269d4ea984_gxfo8i.avif",
-  // "https://res.cloudinary.com/travelee/image/upload/v1739795189/images_dxrjqv.jpg",
-  // "https://res.cloudinary.com/travelee/image/upload/v1739795206/images_x8qnzc.jpg",
-  // "https://res.cloudinary.com/travelee/image/upload/v1739795228/studio-computer-music-station-professional-audio-mixing-console-d-rendering-set-up-faders-adjusting-knobs-big-monitor-140495992_qf3rlf.webp",
-  // "https://res.cloudinary.com/travelee/image/upload/v1739795246/images_cf5lce.jpg",
-  "https://res.cloudinary.com/travelee/image/upload/v1739795290/IMG_1504_lqsb2h.webp",
-  "https://res.cloudinary.com/travelee/image/upload/v1739795761/photo-1613909207039-6b173b755cc1_rlbnyy.avif",
-  // "https://res.cloudinary.com/travelee/image/upload/v1739795317/images_l7rbkp.jpg",
-  "https://res.cloudinary.com/travelee/image/upload/v1739795356/Studio_1_jg72xe.jpg",
-  "https://res.cloudinary.com/travelee/image/upload/v1739795588/photo-1614604858874-5354c8788d3e_cgl2c7.avif",
-  "https://res.cloudinary.com/travelee/image/upload/v1739795637/photo-1554774853-aae0a22c8aa4_mbvktz.avif",
-  "https://res.cloudinary.com/travelee/image/upload/v1739795677/photo-1517245386807-bb43f82c33c4_qiruxk.avif",
-
-  
+  i,im,ima,imag,image,imagei,imageia,imageiaa,imageiaaa
 ]
 
 export default function CustomSwiper() {

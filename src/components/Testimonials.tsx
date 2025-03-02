@@ -1,6 +1,9 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useInView } from 'react-intersection-observer'
+import image2 from "../../public/t1.png"
+import image1 from "../../public/t2.png"
+import image3 from "../../public/f4.png"
 
 type Testimonial = {
   name: string
@@ -15,21 +18,21 @@ const testimonials: Testimonial[] = [
     name: "Amit Rao",
     role: "Co-Founder",
     company: "InnovateTech",
-    image: "https://res.cloudinary.com/travelee/image/upload/v1739789871/9455e6af-834d-400c-9847-77b1ecfb1f96.png",
+    image: image1.src,
     quote: "Zuper Studio transformed our brand identity from basic to bold! Their branding and content creation helped us stand out in a crowded tech market. Plus, their commitment to deadlines is unmatched—every deliverable was on time, and their money-back guarantee gave us complete confidence in their process."
   },
   {
     name: "Sangeeta Sharma",
     role: "Founder",
     company: "TrendVogue",
-    image: "https://res.cloudinary.com/travelee/image/upload/v1739789939/5190df41-3519-4e5f-bc1a-2e31243ec400.png",
+    image: image2.src,
     quote: "Working with Zuper Studio was a game-changer! They handled everything—from product photography to website design—with creativity and precision. Their team is reliable, fun, and always ready to go the extra mile. We received exactly what was promised, right on schedule. Highly recommended!"
   },
   {
     name: "Rahul Suresh",
     role: "Marketing Head",
     company: "DineDelight Restaurants",
-    image: "https://res.cloudinary.com/travelee/image/upload/v1739789987/ec3ac174-43b3-475c-8e71-9887c851b2e6.png",
+    image: image3.src,
     quote: "We needed a complete digital revamp, and Zuper Studio delivered beyond expectations. From social media content to our website makeover, they made our brand look and feel premium. Their 100% Money-Back Guarantee was reassuring, but we never needed it—because they delivered everything flawlessly!"
   }
 ]

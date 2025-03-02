@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { navOptions } from "../../public/data/navOptions";
+import logo from "../../public/logo.svg"
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,8 +65,8 @@ const Header: React.FC = () => {
           >
             <Link href="/" className="flex items-center">
               <Image
-                src="https://res.cloudinary.com/travelee/image/upload/v1740029413/logo_mle0rh.png"
-                alt="IndoriX Logo"
+                src={logo}
+                alt="Zuper Logo"
                 className="w-20 h-20 object-contain"
                 priority
                 width={60}

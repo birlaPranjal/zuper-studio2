@@ -61,6 +61,7 @@ export default function ContactForm() {
 
   return (
     <motion.section
+      id="contact"
       className="w-full max-w-md px-6 py-8 bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
