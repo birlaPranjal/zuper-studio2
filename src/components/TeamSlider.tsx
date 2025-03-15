@@ -14,7 +14,7 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: "Zuper Prashant",
-    role: "Founder & CEO",
+    role: "Co-Founder",
     image: image1.src,
   },
   {
@@ -23,8 +23,8 @@ const teamMembers: TeamMember[] = [
     image: image2.src,
   },
   {
-    name: "Zuper Prateeksha",
-    role: "HR & Operations",
+    name: "Zuper Deependra",
+    role: "Co-Founder",
     image: image3.src,
   }
 ];

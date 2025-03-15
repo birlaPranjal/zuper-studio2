@@ -8,8 +8,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: false,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
+    user: "pranjal@zuperstudio.com",
+    pass: "zuper@world",
   },
   debug: true
 })
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       // Send thank you email
       console.log('📧 Sending thank you email to:', email)
       await transporter.sendMail({
-        from: process.env.EMAIL_USER,
+        from: "pranjal@zuperstudio.com",
         to: email,
         subject: 'Thank you for contacting Zuper Studio!',
         html: createEmailTemplate(name),
@@ -74,10 +74,10 @@ export async function POST(request: Request) {
       console.log('✅ Thank you email sent successfully to:', email)
 
       // Send notification to admin
-      console.log('📧 Sending notification email to admin:', process.env.ADMIN_EMAIL)
+      console.log('📧 Sending notification email to admin:', 'pranjal@zuperstudio.com')
       await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: process.env.ADMIN_EMAIL,
+        from: 'pranjal@zuperstudio.com',
+        to: 'pranjal@zuperstudio.com',
         subject: 'New Contact Form Submission',
         html: `
           <h2>New Contact Form Submission</h2>

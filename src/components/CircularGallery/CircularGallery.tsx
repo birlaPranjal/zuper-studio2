@@ -509,48 +509,32 @@ class App {
         text: "Chai Corner",
       },
       {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        text: "Desk Setup",
+        image: `https://res.cloudinary.com/travelee/image/upload/v1742027668/DSC05137_pu3m2t.jpg`,
+        text: "Office",
       },
       {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
-        text: "Waterfall",
+        image: `https://res.cloudinary.com/travelee/image/upload/v1742027664/DSC05092_ie88jc.jpg`,
+        text: "Kitchen Studio",
       },
       {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
-        text: "Strawberries",
+        image: `https://res.cloudinary.com/travelee/image/upload/v1742027658/DSC05126_x8sk6h.jpg`,
+        text: "SmartBoard",
       },
       {
-        image: `https://picsum.photos/seed/5/800/600?grayscale`,
-        text: "Deep Diving",
+        image: `https://res.cloudinary.com/travelee/image/upload/v1742027657/DSC05133_h3f1vk.jpg`,
+        text: "Wall",
       },
       {
-        image: `https://picsum.photos/seed/16/800/600?grayscale`,
-        text: "Train Track",
+        image: `https://res.cloudinary.com/travelee/image/upload/v1742027659/DSC05147_tzgrpv.jpg`,
+        text: "Editors",
       },
       {
-        image: `https://picsum.photos/seed/17/800/600?grayscale`,
-        text: "Santorini",
+        image: `https://res.cloudinary.com/travelee/image/upload/v1742027666/DSC05044_czhwrm.jpg`,
+        text: "zuper",
       },
       {
-        image: `https://picsum.photos/seed/8/800/600?grayscale`,
-        text: "Blurry Lights",
-      },
-      {
-        image: `https://picsum.photos/seed/9/800/600?grayscale`,
-        text: "New York",
-      },
-      {
-        image: `https://picsum.photos/seed/10/800/600?grayscale`,
-        text: "Good Boy",
-      },
-      {
-        image: `https://picsum.photos/seed/21/800/600?grayscale`,
-        text: "Coastline",
-      },
-      {
-        image: `https://picsum.photos/seed/12/800/600?grayscale`,
-        text: "Palm Trees",
+        image: `https://res.cloudinary.com/travelee/image/upload/v1742027671/DSC05019_keyjal.jpg`,
+        text: "zuper",
       },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
